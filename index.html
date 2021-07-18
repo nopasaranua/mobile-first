@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Mobile First</title>
+</head>
+<body>
+    <svg style="display: none;">
+        <symbol id="facebook-f" viewBox="0 0 320 512">
+            <g>
+                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+            </g>
+        </symbol>
+        <symbol id="google-plus" viewBox="0 0 640 512">
+            <g>
+                <path d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"/>
+            </g>
+        </symbol>
+        <symbol id="pinters" viewBox="0 0 496 512">
+            <g>
+                <path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/>
+            </g>
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 512 512">
+            <g>
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+            </g>
+        </symbol>
+        <symbol id="arrow-up" viewBox="0 0 22 22">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.74699 10.4395L10.6465 0.540039L21.2183 11.1119L20.1577 12.1725L10.6986 2.71352L1.85981 11.5524L0.74699 10.4395Z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="info" viewBox="0 0 55 54">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M54.3666 27.146C54.3666 41.8052 42.2597 53.6888 27.3251 53.6888C12.3906 53.6888 0.283691 41.8052 0.283691 27.146C0.283691 12.4869 12.3906 0.603271 27.3251 0.603271C42.2597 0.603271 54.3666 12.4869 54.3666 27.146ZM52.2033 27.146C52.2033 40.6324 41.0649 51.5654 27.3251 51.5654C13.5853 51.5654 2.44701 40.6324 2.44701 27.146C2.44701 13.6596 13.5853 2.72669 27.3251 2.72669C41.0649 2.72669 52.2033 13.6596 52.2033 27.146ZM22.9985 21.8375V22.8992H25.1618L25.1618 39.8865H22.9985V40.9483H25.1618H29.4885H31.6518V39.8865H29.4885V21.8375H25.1618H22.9985ZM30.5701 16.5289C30.5701 18.288 29.1173 19.7141 27.3251 19.7141C25.533 19.7141 24.0802 18.288 24.0802 16.5289C24.0802 14.7698 25.533 13.3438 27.3251 13.3438C29.1173 13.3438 30.5701 14.7698 30.5701 16.5289Z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="search" viewBox="0 0 54 54">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M36.1174 6.11644C43.4961 13.4951 44.0383 25.1602 37.8158 33.4035L53.9362 49.5239L50.112 53.3481L34.0438 37.28C25.7792 43.8846 13.8079 43.465 6.28839 35.9455C-1.79677 27.8603 -1.67363 14.6286 6.56344 6.39149C14.8005 -1.84558 28.0323 -1.96872 36.1174 6.11644ZM34.5877 7.64613C41.8437 14.902 41.7331 26.7767 34.3409 34.169C26.9487 41.5612 15.074 41.6717 7.81808 34.4158C0.562169 27.1599 0.672684 15.2852 8.06492 7.89297C15.4572 0.500731 27.3318 0.390217 34.5877 7.64613Z" />
+            </g>
+        </symbol>
+    </svg><div class="page">
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="logo" href="#">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#" data-scroll="#intro">Главная</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#" data-scroll="#servic">Сервис</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#" data-scroll="#project">Наши проекты</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#" data-scroll="#team">Команда</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#" data-scroll="#blog">Блог</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="burger" type="menu" id="toggleBtn">
+                    <span>menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- Intro -->
+    <section class="intro" id="intro">
+        <div class="container">
+            <div class="intro__slider">
+                <div class="intro__item" >
+                     <div class="intro__title"><h1>МЫСЛИ <br>
+                        ГЛОБАЛЬНО</h1></div>
+                     <div class="intro__text"><p>Di Gі - это диджитал агентство полного цикла, направленное на самый лучший результат наших клиентов в маркетинге, продажах и управлении </p></div>
+                     <a class="intro__btn" href="#">Подробнее</a>
+                </div>
+                <div class="intro__item" >
+                    <div class="intro__title"><h1>МЫСЛИ <br>
+                       ГЛОБАЛЬНО</h1></div>
+                    <div class="intro__text"><p>Di Gі - это диджитал агентство полного цикла, направленное на самый лучший результат наших клиентов в маркетинге, продажах и управлении</p></div>
+                    <a class="intro__btn" href="#">Подробнее</a>
+               </div>
+               <div class="intro__item" >
+                <div class="intro__title"><h1>МЫСЛИ <br>
+                   ГЛОБАЛЬНО</h1></div>
+                <div class="intro__text"><p>Di Gі - это диджитал агентство полного цикла, направленное на самый лучший результат наших клиентов в маркетинге, продажах и управлении</p></div>
+                <a class="intro__btn" href="#">Подробнее</a>
+           </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Promo   -->
+    <section class="promo">
+        <div class="container">
+            <div class="promo__inner">
+                <div class="promo__text">
+                    <h3>Вы полюбите нас с первой встречи!</h3>
+                    <p>Мы предоставляем комплексный подход к продвижению компании, продуктов и услуг в цифровой сфере.</p>
+                </div>
+                <a class="btn" href="#">ПЕРЕЗВОНИТЕ МНЕ</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Servic -->
+    <section class="section" id="servic">
+        <div class="container">
+            <div class="section__inner section__inner--servic">
+                <div class="section__header">
+                    <h2>Сервис</h2>
+                    <h3>От идеи до незабываемого и
+                        измеримого результата.</h3>
+                    <p>Интеграция безупречного производства, передовых технологий и тщательного измерения производительности</p>
+                </div>
+    
+                <div class="servic">
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/strategy.png" alt="icon">
+                        </div>
+                        <div class="servic__title">СТРАТЕГИЯ</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/analiz.png" alt="icon">
+                        </div>
+                        <div class="servic__title">АНАЛИЗ</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/social.png" alt="icon">
+                        </div>
+                        <div class="servic__title">СОЦ СЕТИ</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/development.png" alt="icon">
+                        </div>
+                        <div class="servic__title">РАЗВИТИЕ</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/content.png" alt="icon">
+                        </div>
+                        <div class="servic__title">КОНТЕНТ</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item active">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/design.png" alt="icon">
+                        </div>
+                        <div class="servic__title">ДИЗАЙН UX</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/reklam.png" alt="icon">
+                        </div>
+                        <div class="servic__title">Таргетирование реклама</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+    
+                    <div class="servic__item">
+                        <div class="servic__images">
+                            <img src="assets/images/servic/product.png" alt="icon">
+                        </div>
+                        <div class="servic__title">Продукт</div>
+                        <div class="servic__text">
+                            <p>Создадим уникальный и удобный дизайн..</p>
+                            <a href="#">ПОДРОБНЕЕ →</a>
+                        </div>
+                    </div>
+                </div><!--  ./servic -->
+            </div>
+        </div><!--  ./container -->
+    </section>
+    
+    <!-- Our project -->
+    <section class="section section--project" id="project">
+        <div class="container">
+            <div class="section__header section__header--project">
+                <h2>Наши Проекты</h2>
+            </div>
+    
+            <div class="project">
+    
+                <div class="project__item">
+                    <div class="project__cart">
+                        <div class="project__images">
+                            <img src="assets/images/portfolio/1.jpg" alt="project-images">
+                        </div>
+                        <div class="project__mask">
+                            <svg class="project__icon">
+                                <use xlink:href="#info"></use>
+                            </svg>
+                            <svg class="project__icon">
+                                <use xlink:href="#search"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project__title">Lalique бутик</div>
+                </div>
+    
+                <div class="project__item">
+                    <div class="project__cart">
+                        <div class="project__images">
+                            <img src="assets/images/portfolio/2.jpg" alt="project-images">
+                        </div>
+                        <div class="project__mask">
+                            <svg class="project__icon">
+                                <use xlink:href="#info"></use>
+                            </svg>
+                            <svg class="project__icon">
+                                <use xlink:href="#search"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project__title">Строительство домов</div>
+                </div>
+    
+                <div class="project__item">
+                    <div class="project__cart">
+                        <div class="project__images">
+                            <img src="assets/images/portfolio/3.jpg" alt="project-images">
+                        </div>
+                        <div class="project__mask">
+                            <svg class="project__icon">
+                                <use xlink:href="#info"></use>
+                            </svg>
+                            <svg class="project__icon">
+                                <use xlink:href="#search"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project__title">Кофейня</div>
+                </div>
+    
+                <div class="project__item">
+                    <div class="project__cart">
+                        <div class="project__images">
+                            <img src="assets/images/portfolio/4.jpg" alt="project-images">
+                        </div>
+                        <div class="project__mask">
+                            <svg class="project__icon">
+                                <use xlink:href="#info"></use>
+                            </svg>
+                            <svg class="project__icon">
+                                <use xlink:href="#search"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project__title">Уникальные туры</div>
+                </div>
+            </div><!--  ./project -->
+    
+        </div><!--  ./container -->
+    </section>
+    
+    <!-- Team -->
+    <section class="section section--team" id="team">
+        <div class="container">
+            <div class="team">
+                <div class="team__col">
+                    <div class="team__images">
+                        <img src="assets/images/team.jpg" alt="our team">
+                    </div>
+                </div>
+                <div class="team__col">
+                    <div class="team__text">
+                        <h3>Команда</h3>
+                        <p>
+                            Наша команда - это наша самая большая ценность.
+                            Мы трудились, чтобы собрать группу  экспертов,
+                            чьи навыки дополняют друг друга.
+                            У членов нашей команды разные истории, но мы разделяем общую страсть к идеалу. Мы верим, чтобы оставаться
+                            профессионалом, нужно развиваться,
+                            поэтому мы постоянно ищем способы, как стать лучше
+                            в том, что мы делаем.
+                        </p>
+                    </div>
+                    <button class="btn btn--team" data-modal="video-modal">СМОТРЕТЬ ВИДЕО</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog -->
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="section__header section__header--blog">
+                <h2>Последние Новости</h2>
+            </div>
+    
+            <div class="blog">
+                <div class="blog__col">
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/1.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">3Д в брендинге</div>
+                    </div>
+    
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/5.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Уникальный дизайн</div>
+                    </div>
+                </div>
+    
+                <div class="blog__col">
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/6.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Контекстная реклама</div>
+                    </div>
+    
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/2.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Взгляд со стороны</div>
+                    </div>
+                </div>
+                <div class="blog__col">
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/3.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Графика</div>
+                    </div>
+    
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/7.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Соц сети и их польза</div>
+                    </div>
+                </div>
+                <div class="blog__col">
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/4.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Корпоративная культура</div>
+                    </div>
+    
+                    <div class="blog__item">
+                        <div class="blog__cart">
+                            <div class="blog__images">
+                                <img src="assets/images/blog/8.jpg" alt="blog-images">
+                            </div>
+                            <div class="blog__mask">
+                                <svg class="blog__icon">
+                                    <use xlink:href="#info"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="blog__title">Эксклюзивность</div>
+                    </div>
+                </div>
+            </div><!-- ./blog -->
+    
+        </div><!-- ./container -->
+    </section>
+    
+    <section class="slider">
+        <div class="container">
+            <div class="slider__inner">
+                <div class="slider__item">
+                    <div class="slider__text">
+                        <p>Если нужно создавать либо повышать имидж компании,
+                            то  <a href="#"> диджитал-маркетинг</a> является наиболее подходящим</p>
+                        <span>- Маргарита Акулич </span>
+                    </div>
+                </div>
+                <div class="slider__item">
+                    <div class="slider__text">
+                        <p>Если нужно создавать либо повышать имидж компании,
+                            то  <a href="#"> диджитал-маркетинг</a> является наиболее подходящим</p>
+                        <span>- Маргарита Акулич</span>
+                    </div>
+                </div>
+                <div class="slider__item">
+                    <div class="slider__text">
+                        <p>Если нужно создавать либо повышать имидж компании,
+                            то  <a href="#"> диджитал-маркетинг</a> является наиболее подходящим</p>
+                        <span>- Маргарита Акулич</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a class="logo logo--footer" href="#">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+                <div class="footer__title">Мы хотели бы услышать все о вашем проекте.Свяжись с нами.</div>
+                <div class="social">
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink:href="#facebook-f"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon social__icon--google">
+                            <use xlink:href="#google-plus"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink:href="#pinters"></use>
+                        </svg>
+                    </a>
+    
+                </div>
+    
+                <div class="footer__content">
+                    <div class="footer__item">
+                        <div class="footer__content-title">КОНТАКТЫ</div>
+                        <div class="footer__contact">
+                            <a class="footer__tel" href="tel:+805555566">+80 555 55 66</a>
+                            <a class="footer__mail" href="malito:digi@gmail.com">digi@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__content-title">АДРЕС</div>
+                        <address class="footer__address">
+                            Пр. Науки 107 <br>
+                            Kиев / Украина
+                        </address>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__content-title">ПОМОЩЬ</div>
+                        <div class="footer__help">
+                            <a class="footer__question" href="#">Как с нами связаться?</a>
+                            <a class="footer__question" href="#">Что такое диджитал?</a>
+                            <a class="footer__question" href="#">Стоимость услуг?</a>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__content-title">МЕНЮ </div>
+                        <nav class="nav nav--footer">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#" data-scroll="#project">Наши проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#" data-scroll="#team">Команда</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="#" data-scroll="#blog">Блог</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div><!-- ./footer__content -->
+            </div><!-- ./footer__inner -->
+        </div><!-- ./container -->
+    
+    </footer>
+    
+    
+    <!-- <a class="footer__up" href="#" >Вверх
+        <svg>
+            <use xlink:href="#arrow-up"></use>
+        </svg>
+    </a> --></div>
+<div class="modal" id="video-modal">
+	<div class="modal__content">
+        <button class="modal__close" type="button">
+			<img src="assets/images/svg/close.svg" alt="Close">
+		</button>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/8PAnd4fVpxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
